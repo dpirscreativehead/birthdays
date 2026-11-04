@@ -751,7 +751,7 @@ function toggleTaken(id){
     state.taken[todayKey] = state.taken[todayKey] || {};
     state.taken[todayKey][id] = rec;
     ref.set(rec).catch(e=>toast('Could not update: '+e.message,'error'));
-    toast("Added to today's list — marked as photographed", 'success');
+    toast("Added to today's list — marked as ", 'success');
   }
   scheduleRender();
 }
@@ -813,7 +813,7 @@ function renderDashboard(){
 
   statRow.innerHTML =
     statCard('cake', list.length, "Today's birthdays", 'amber') +
-    `<div class="card stat"><div class="stat-ic green"><svg class="ic"><use href="#i-camera"/></svg></div><div style="min-width:0"><div class="stat-v">${takenN} / ${list.length}</div><div class="stat-l">Photographed today</div><div class="prog-line"><div class="prog-fill" style="width:${pct}%"></div></div></div></div>` +
+    `<div class="card stat"><div class="stat-ic green"><svg class="ic"><use href="#i-camera"/></svg></div><div style="min-width:0"><div class="stat-v">${takenN} / ${list.length}</div><div class="stat-l">Took today</div><div class="prog-line"><div class="prog-fill" style="width:${pct}%"></div></div></div></div>` +
     statCard('calendar', monthCount(), 'Birthdays this month') +
     statCard('users', total, 'Total students');
 
